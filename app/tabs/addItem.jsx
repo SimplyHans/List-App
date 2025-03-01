@@ -2,6 +2,8 @@ import { StyleSheet, TextInput, View, Text, TouchableOpacity, Keyboard } from 'r
 import React, { useState } from 'react';
 import useTaskStorage from '../../components/taskStorage'; // Import taskStorage logic
 
+import colors from '../../constants/colors';
+
 const AddItem = () => {
     console.log('Adding Task...');
     const [title, setTitle] = useState('');
@@ -23,64 +25,85 @@ const AddItem = () => {
 
     return (
         <View style={styles.container}>
-            <Text style={styles.header}>Adding a To Do</Text>
-            <View>
-                <Text>Enter Title:</Text>
+            <Text style={styles.header}>Creating Task</Text>
+            
+            
+            <Text style={styles.txt}>Enter Title:</Text>
+            <View style={styles.wrapper}>
                 <TextInput
-                    maxLength={20}
-                    placeholder={'Type here...'}
+                    maxLength={35}
+                    placeholder={'Title...'}
+                    placeholderTextColor= {colors.fadePurple}
                     style={styles.input}
                     value={title}
                     onChangeText={setTitle}
                 />
+            </View>
 
-                <Text>Enter Description:</Text>
+            <Text style={styles.txt}>Enter Description:</Text>
+            <View style={styles.wrapper}>
                 <TextInput
-                    maxLength={50}
+                    maxLength={150}
                     multiline
                     numberOfLines={4}
-                    placeholder={'Type here...'}
+                    placeholder={'Description...'}
+                    placeholderTextColor= {colors.fadePurple}
                     style={styles.input}
                     value={desc}
                     onChangeText={setDesc}
                 />
-            </View>
-
-            <TouchableOpacity onPress={addTasks}>
+                
+                <TouchableOpacity onPress={addTasks}>
                 <View style={styles.addWrapper}>
                     <Text style={styles.addTxt}>+ Add</Text>
                 </View>
             </TouchableOpacity>
+            </View>
         </View>
     );
 };
 
 const styles = StyleSheet.create({
     container: {
-        paddingTop: 50,
+        paddingTop: 55,
         flex: 1,
+        paddingHorizontal: 30,
+        backgroundColor: colors.primary,
+    },
+    wrapper: {
         alignItems: 'center',
     },
     input: {
-        padding: 10,
-        width: 300,
-        backgroundColor: 'gray',
-        borderRadius: 10,
+        padding: 13,
+        width: 330,
+        backgroundColor: colors.primary,
+        borderColor: colors.purple,
+        color: 'white',
+        
+        borderWidth: 1.5,
+        borderRadius: 15,
     },
     addWrapper: {
         marginTop: 20,
         paddingVertical: 15,
         paddingHorizontal: 30,
-        borderRadius: 20,
-        backgroundColor: 'green',
+        borderRadius: 30,
+        backgroundColor: colors.green,
     },
     addTxt: {
         fontSize: 20,
+        fontWeight: 700,
+    },
+    txt:{
+        paddingBottom: 8,
+        paddingTop: 15,
+        color: 'white',
     },
     header: {
         fontSize: 24,
         fontWeight: 'bold',
-        marginBottom: 20,
+        marginBottom: 14,
+        color: 'white',
     },
 });
 

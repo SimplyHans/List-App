@@ -29,12 +29,11 @@ export default function TabLayout() {
 
 const styles = StyleSheet.create({
     header:{
-        backgroundColor: colors.PRIMARY,
         headerShown: false,
     },
     tabs:{
         tabBarStyle: { 
-            backgroundColor: colors.secondary,
+            backgroundColor: colors.nav,
             borderTopWidth: 0,
           },
           tabBarActiveTintColor: 'white',

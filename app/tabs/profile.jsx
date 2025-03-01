@@ -6,7 +6,9 @@ import colors from '../../constants/colors';
 const Profile = () => {
   return (
     <View style={styles.container}>
-      <Text>profile</Text>
+      <View>
+        <Text style={styles.header}>Profile</Text>
+      </View>
     </View>
   )
 }
@@ -14,9 +16,19 @@ const Profile = () => {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        alignItems: 'center',
-        backgroundColor: 'black',
+        backgroundColor: colors.primary,
+        paddingTop: 55,
+        paddingHorizontal: 30,
     },
+    wrapper:{
+      flex: 1,
+    },
+    header:{
+      fontSize: 24,
+      fontWeight: 'bold',
+      marginBottom: 20,
+      color: 'white',
+    }
 })
 
 export default Profile

@@ -1,8 +1,11 @@
 import { StyleSheet, View, Text, FlatList, Button } from 'react-native';
 import React, { useState, useEffect } from 'react';
 import { useIsFocused } from '@react-navigation/native';
+
+
 import Task from '../../components/tasks';
 import useTaskStorage from '../../components/taskStorage';
+import colors from '../../constants/colors';
 
 const Home = () => {
     const { taskItems, loadTasks, resetTasks } = useTaskStorage();
@@ -23,7 +26,7 @@ const Home = () => {
     return (
         <View style={styles.container}>
             <View style={styles.wrapper}>
-                <Text style={styles.header}>To Do List</Text>
+                <Text style={styles.header}>Tasks List</Text>
 
             
 
@@ -47,16 +50,18 @@ const Home = () => {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
+        backgroundColor: colors.primary,
+        paddingTop: 55,
+        paddingHorizontal: 30,
     },
     wrapper: {
         flex: 1,
-        paddingTop: 50,
-        paddingHorizontal: 30,
     },
     header: {
         fontSize: 24,
         fontWeight: 'bold',
         marginBottom: 20,
+        color: 'white',
     },
     itemsWrapper: {
         paddingBottom: 20,
