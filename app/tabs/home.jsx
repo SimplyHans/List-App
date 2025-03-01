@@ -1,4 +1,4 @@
-import { StyleSheet, View, Text, FlatList, Button } from 'react-native';
+import { StyleSheet, View, Text, TextInput, FlatList, Button } from 'react-native';
 import React, { useState, useEffect } from 'react';
 import { useIsFocused } from '@react-navigation/native';
 
@@ -27,7 +27,11 @@ const Home = () => {
         <View style={styles.container}>
             <View style={styles.wrapper}>
                 <Text style={styles.header}>Tasks List</Text>
-
+                <TextInput style={styles.searchBar}
+                maxLength={35}
+                placeholder='Search...'
+                placeholderTextColor= {colors.darkGray}
+                />
             
 
                 <View style={styles.itemsWrapper}>
@@ -60,7 +64,7 @@ const styles = StyleSheet.create({
     header: {
         fontSize: 24,
         fontWeight: 'bold',
-        marginBottom: 20,
+        marginBottom: 10,
         color: 'white',
     },
     itemsWrapper: {
@@ -71,6 +75,13 @@ const styles = StyleSheet.create({
         fontSize: 16,
         color: 'gray',
     },
+    searchBar:{
+        padding: 15,
+        backgroundColor: colors.thirdly,
+        borderRadius: 25,
+        marginBottom: 25,
+        color: 'white',
+    }
 });
 
 export default Home;

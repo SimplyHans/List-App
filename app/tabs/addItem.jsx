@@ -33,7 +33,7 @@ const AddItem = () => {
                 <TextInput
                     maxLength={35}
                     placeholder={'Title...'}
-                    placeholderTextColor= {colors.fadePurple}
+                    placeholderTextColor= {colors.fourthly}
                     style={styles.input}
                     value={title}
                     onChangeText={setTitle}
@@ -47,7 +47,7 @@ const AddItem = () => {
                     multiline
                     numberOfLines={4}
                     placeholder={'Description...'}
-                    placeholderTextColor= {colors.fadePurple}
+                    placeholderTextColor= {colors.fourthly}
                     style={styles.input}
                     value={desc}
                     onChangeText={setDesc}
@@ -77,7 +77,7 @@ const styles = StyleSheet.create({
         padding: 13,
         width: 330,
         backgroundColor: colors.primary,
-        borderColor: colors.purple,
+        borderColor: colors.fourthly,
         color: 'white',
         
         borderWidth: 1.5,
