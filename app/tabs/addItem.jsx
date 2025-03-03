@@ -1,6 +1,7 @@
 import { StyleSheet, TextInput, View, Text, TouchableOpacity, Keyboard } from 'react-native';
 import React, { useState } from 'react';
-import useTaskStorage from '../../components/taskStorage'; // Import taskStorage logic
+
+import taskController from '../../controllers/taskController';
 
 import colors from '../../constants/colors';
 
@@ -8,7 +9,7 @@ const AddItem = () => {
     console.log('Adding Task...');
     const [title, setTitle] = useState('');
     const [desc, setDesc] = useState('');
-    const { addTask } = useTaskStorage(); // Get addTask function
+    const { addTask } = taskController(); // Get addTask function
 
     const addTasks = () => {
         Keyboard.dismiss();
