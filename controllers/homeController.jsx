@@ -1,6 +1,6 @@
 import { View, Text } from 'react-native'
 import React from 'react'
-import useTaskStorage from '../components/taskStorage';
+import useTaskStorage from '../controllers/taskController';
 
 
 

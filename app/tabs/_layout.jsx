@@ -7,7 +7,7 @@ import Profile from '../tabs/profile'
 import Add from '../tabs/addItem'
 import colors from '../../constants/colors';
 
-import { getTask } from '../../components/taskStorage';
+import { getTask } from '../../controllers/taskController';
 
 const Tabs = createBottomTabNavigator();
 
